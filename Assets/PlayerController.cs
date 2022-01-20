@@ -9,17 +9,22 @@ public class PlayerController : MonoBehaviour
     public float Speed;
     public int ScoreToWin;
     public float Score;
+    public Text coinscollected;
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        coinscollected.GetComponent<Text>();
+        coinscollected.text = "Coins Collected: " + Score;
     }
 
     // Update is called once per frame
     void Update()
     {
+        coinscollected.text = "Coins Collected: " + Score;
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
